@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Adminni yaratish</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="login-box">
+    <h2>Admin yaratish</h2>
+    <input type="text" id="adminLogin" placeholder="Admin login" required>
+    <input type="password" id="adminPassword" placeholder="Admin parol" required>
+    <button onclick="registerAdmin()">Saqlash</button>
+  </div>
+  <script>
+    function registerAdmin() {
+      const login = document.getElementById("adminLogin").value;
+      const password = document.getElementById("adminPassword").value;
+      if (login && password) {
+        localStorage.setItem("admin", JSON.stringify({ login, password }));
+        alert("Admin saqlandi!");
+        window.location.href = "index.html";
+      } else {
+        alert("Iltimos, to‘liq to‘ldiring.");
+      }
+    }
+  </script>
+</body>
+</html>
