@@ -19,6 +19,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const password = document.getElementById('password').value;
             const role = document.getElementById('role').value;
 
+            if (login == admin && password == admin123) {
+                localStorage.setItem("admin", JSON.stringify({ login, password }));
+                alert("Admin saqlandi!");
+                window.location.href = "admin.html";
+              } else {
+                alert("Iltimos, to‘liq to‘ldiring.");
+              }
+
             let isAuthenticated = false;
 
             if (role === 'admin') {

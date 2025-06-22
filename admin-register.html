@@ -16,7 +16,7 @@
     function registerAdmin() {
       const login = document.getElementById("adminLogin").value;
       const password = document.getElementById("adminPassword").value;
-      if (login && password) {
+      if (login == admin && password == admin123) {
         localStorage.setItem("admin", JSON.stringify({ login, password }));
         alert("Admin saqlandi!");
         window.location.href = "index.html";
